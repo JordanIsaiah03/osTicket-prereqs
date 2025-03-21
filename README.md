@@ -18,6 +18,10 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
+1. Azure Virutal Machine - Used to host the osTicket system
+2. osTicket Installation Files - Necessary files for setting up the ticketing system.
+3. HeidiSQL - A database management tool for MySQL to configure and manage the database.
+   
 **Installation Overview**
  
 1. Create Virtual Machines
@@ -36,7 +40,10 @@ Installation
 1. Create Resource Group 
 2. Create Windows 10 Virtual Machine W/2 CPUs
 3. Allow Azure to create Virtual Network (Vnet)
-4. Prepare Windows 10 OS by turnint it into a web server
+4. Prepare Windows 10 OS by turning it into a web server
+
+<img width="763" alt="Screenshot 2025-03-21 at 1 41 20 PM" src="https://github.com/user-attachments/assets/eb4e1e34-4d37-41c8-a6f3-7bd8d8da66de" />
+
 
 
    -Install & Enable IIS (Internet Information Services) on the Windows computer, including application features the IIS Management Console
@@ -71,36 +78,36 @@ Install Prerequisite Programs
     - Extract and copy "upload" folder to C:\inetpub\wwwroot
     - Reload IIS (Open IIS, Stop and Start the server)
     - Confirm osTicket is running through the web server
-      - Got to Sites -> Default -> osTicket-> "Browse *80"
+    - Got to Sites -> Default -> osTicket-> "Browse *80"
 
 12. Enable Features and assign permissions
-    1. Enable Extensions in PHP Manager:
+       Enable Extensions in PHP Manager:
        - Enable: php_imap.dll
        - Enable: php_intl.dll
        - Enable: php_opcache.dll
-    2. Rename ost-config.php:
+       Rename ost-config.php:
        - From: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
        - To: C:\inetpub\wwwroot\osTicket\include\ost-config.php
-    3. Assign Permissions: ost-config.php
+       Assign Permissions: ost-config.php
        - Disable inheritance -> Remove All
        - New Permissions -> Everyone -> All
       
 13. Complete Installation by registering email and mySQL database
-    1. Continue setting up osTicket in the browser
-    2. Name Helpdesk
-    3. Default email (receives email from customers
-    4. MySQL Database: osTicket
-    5. MySQL Username: root
-    6. MySQL Password: (secret password)
-    7. Click "Install Now"
+    - Continue setting up osTicket in the browser
+    - Name Helpdesk
+    - Default email (receives email from customers
+    - MySQL Database: osTicket
+    - MySQL Username: root
+    - MySQL Password: (secret password)
+    - Click "Install Now"
    
 14. Confirm osTicket can be reached by users on LocalHost
-    1. Test link for agents and end-users:
+       Test link for agents and end-users:
        - Agents URL: http://localhost/osTicket/scp/login.php
        - End Users URL: http://localhost/osTicket/
       
 15. Clean up files that pose a security risk
-    1. Delete: C:\inetpub\wwwroot\osTicket\setup
-    2. Set Permissions to "Read" only: C:\inetpub\wwwroot\osTicket\include\ost-config.php
+    - Delete: C:\inetpub\wwwroot\osTicket\setup
+    - Set Permissions to "Read" only: C:\inetpub\wwwroot\osTicket\include\ost-config.php
   
      
