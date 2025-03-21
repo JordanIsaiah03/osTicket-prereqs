@@ -38,10 +38,6 @@ Installation
 3. Allow Azure to create Virtual Network (Vnet)
 4. Prepare Windows 10 OS by turnint it into a web server
 
-   ![osTicket 1](https://github.com/user-attachments/assets/ad2d8571-e072-4853-8eb8-2d8913fcf459)
-
- 
-   (https://github.com/user-attachments/assets/41b95b5e-337c-4ef0-9eee-d920f934f742)
 
    -Install & Enable IIS (Internet Information Services) on the Windows computer, including application features the IIS Management Console
 
